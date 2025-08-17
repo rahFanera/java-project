@@ -15,7 +15,7 @@ pipeline {
         }
         stage('Artifact Upload'){
             steps{
-                nexusArtifactUploader credentialsId: 'nexus', groupId: 'org.example', nexusUrl: 'localhost:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'https://github.com/rahFanera/java-project', version: '1.0-SNAPSHOT'
+                nexusArtifactUploader artifacts: [[artifactId: 'javaproject', classifier: '', file: 'javaproject.jar', type: '.jar']], credentialsId: 'nexus', groupId: 'org.example', nexusUrl: 'localhost:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'https://github.com/rahFanera/java-project', version: '4.0.0'
             }
         }
     }
